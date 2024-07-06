@@ -1,0 +1,391 @@
+@import "https://unpkg.com/open-props";
+
+header {
+    background-color: rgb(44, 77, 92);
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    grid-template-areas: 
+        "tree name name menu"; 
+    padding: 10px;
+    border: 0px;
+}
+
+#menu a {
+    grid-area: menu;
+    text-decoration: none;
+    color: white;
+    font-size: small;
+}
+#menu {
+    grid-area: menu;
+    justify-content: center;
+}
+#menu ul {
+    justify-self: center;
+    margin: 0;
+}
+#menu li{
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid white;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+}
+#menu a:hover {
+    color: rgb(127, 194, 207);
+}
+li {
+    list-style: none;
+    padding-bottom: 10px;
+}
+ul {
+    padding: 0px;
+}
+
+body {
+    background: rgb(64,135,149);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#top {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background-color: rgb(44, 77, 92);
+    box-shadow: white 0 1px 1px;
+}
+
+#circle-logo {
+    grid-area: tree;
+    transition: box-shadow 0.3s ease-in-out;
+    background-color: transparent;
+    border: none;
+    border-radius: 999px;
+    height: 184px;
+    margin-bottom: 16px;
+}
+
+#circle-logo:hover {
+    box-shadow: 0 0 30px rgb(79, 145, 158);
+}
+
+#circle-logo img{
+    height: 200px;
+}
+
+#text-logo {
+    grid-area: name;
+    justify-self: center;
+}
+
+#text-logo img{
+    height: 200px;
+}
+
+h2 {
+    font-weight: 100;
+}
+
+main section {
+    border: solid 3px rgb(44, 77, 92);
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: rgb(46, 73, 99) 5px 5px;
+
+    div {
+        display: flex;
+        flex-direction: row;
+    }
+
+    h1 {
+        text-align: center; 
+        color:rgb(44, 77, 92);
+        width: 100%;
+    }
+
+    .behavior {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+            "minus number plus" 
+            "minus behavior plus"
+            "minus clear plus";
+        height: auto;
+        width: 20%;
+        justify-content: space-evenly;
+        margin-inline: 3%;
+        margin-bottom: 3%;
+        padding-inline: 3%;
+        border: solid rgb(44, 77, 92);
+        background-color: rgb(44, 77, 92);
+        border-radius: 10px;
+        color:white;
+        align-items: center;
+        };
+
+    button {
+        color: white;
+        font-weight:bolder;
+        font-size: larger;
+        text-align: center;
+        background-color: rgb(208, 129, 65);
+        height: 25px;
+        margin-inline: 3px;
+    }
+    .clear {
+        grid-area: clear;
+        color: rgb(44, 77, 92);
+        background-color: white;
+        font-size: small;
+        padding: 2px;
+        width: 50%;
+        height: 90%;
+        justify-self: center;
+        align-self: bottom;
+        border-radius: 10px;
+    }
+    .number-behavior {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .behavior .minus button {
+        grid-area: minus;
+    }
+    .behavior .plus button{
+        grid-area: plus
+    }
+    
+     .action {
+        grid-area: behavior;
+        text-align: center;
+        margin: 3px;
+        text-align: top;
+    }
+     .count {
+        grid-area: number;
+        text-align:center;
+        margin: 3px;
+        text-align: bottom;
+    }
+    .behavior-container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+#full-logo img {
+    height: auto;
+    max-width: 80%;
+    
+}
+
+#login-logo {
+    grid-area: full-logo;
+    justify-items: center;
+    align-items: center;
+    width: 100%
+}
+
+#login-form{
+    grid-area: login;
+    display: flex;
+
+    h1 {
+        text-align: top;
+        text-justify: center;
+    }
+}
+
+
+@media screen and (max-width: 1050px) {
+    header {
+        display: grid;
+        grid-template-columns: 1fr 3fr 3fr 1fr;
+        grid-template-areas: 
+            "tree name name ."
+            ". menu menu ."; 
+        padding: 10px;
+        border: 0px;
+        height: 120px;
+    }
+    #menu {
+        grid-area: menu;
+        justify-content: center;
+    }
+    #menu ul {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+    #menu li{
+        padding: 0px 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 1px solid white;
+        margin-left: 10px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+    }
+    #menu li a {
+        vertical-align: middle;
+    }
+
+    #circle-logo {
+        justify-self: center;
+        align-self: center;
+        height: 60px;
+    }
+
+    #circle-logo img {
+        height: 80px;
+    }
+
+    #text-logo {
+        justify-self: center;
+        align-self: center;
+    }
+
+    #text-logo img {
+        height: 70px;
+    }
+    
+    main {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    main section {
+        margin: 5px;
+        box-shadow: rgb(46, 73, 99) 3px 3px;
+        width: 43%;
+       
+        h1 {
+            font-size: medium;
+        }
+        
+        .behavior {
+            height: auto;
+            width: 85%;
+        };
+        div {
+            display: flex;
+            flex-direction: column;
+        }
+        div .behavior {
+            display: grid;
+            grid-template-columns: 1fr 4fr 1fr;
+            grid-template-rows: auto auto auto;
+            grid-template-areas: 
+            "minus number plus" 
+            "minus behavior plus"
+            "minus clear plus"
+            ;
+        };
+    
+        button {
+            font-weight:bold;
+            font-size: small;
+            text-align: center;
+            height: 20px;
+            margin-inline: 1px;
+        }
+
+        .clear {
+            grid-area: clear;
+            font-size:xx-small;
+            text-align: center;
+            height: 15px;
+        }
+        .minus {
+            grid-area: minus;
+        }
+        .plus{
+            grid-area: plus;
+        }
+        .clear {
+            grid-area: clear;
+        }
+
+        h2 {
+            margin: 1px;
+            font-size: small;
+        }
+        .count {
+            grid-area: number;
+            margin: 1px;
+            font-size: smaller;
+        }
+    }
+    
+    #students {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+#add-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    inline-size: var(--size-14);
+    border: var(--gray-12) var(--border-size-4) solid;
+    border-radius: var(--radius-drawn-5);
+    margin: 50px;
+    margin-top: 20px;
+    padding: 50px;
+    width: 60%;
+    color: white;
+    background-color: rgb(44, 77, 92);
+    #form{
+        justify-self: center;
+    }
+}
+
+#add-main {
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+
+    #create{
+        align-self: center;
+        width: 150px;
+        inline-size: var(--size-14);
+        border: var(--gray-12) var(--border-size-2) solid;
+        border-radius: var(--radius-drawn-4);
+    }
+}
+
+#add-h1 {
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-top: 50px;
+}
+
+.student-box {
+    position: relative;
+    padding: 10px;
+}
+
+.name {
+    display: inline-block;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.add-behavior-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgb(127, 194, 207);
+    color: white;
+    font-weight: bold;
+}

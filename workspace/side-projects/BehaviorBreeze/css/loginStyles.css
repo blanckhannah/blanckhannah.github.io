@@ -1,0 +1,62 @@
+@import "https://unpkg.com/open-props";
+
+body {
+    background-color: rgb(44, 77, 92);
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+        ". full-logo ."
+        ". login ."
+    ;
+}
+
+#full-logo {
+    grid-area: full-logo;
+    display: flex;
+    justify-content: center;
+}
+
+#full-logo img {
+    animation:
+        var(--animation-shake-y),
+        var(--animation-fade-in),
+        var(--animation-slide-in-left);
+    
+}
+
+#login-text {
+    grid-area: login;
+}
+
+#form {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    margin-top: 40px;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-top: 40px;
+}
+
+#submit {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+
+@media screen and (max-width: 1000px) {
+    #form {
+        display: flexbox;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #submit {
+        margin-top: 40px;
+        width: 70px;
+    }
+}
